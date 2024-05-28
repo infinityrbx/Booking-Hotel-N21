@@ -4,7 +4,9 @@ import Accommodation from '../pages/Accommodation';
 import Booking from '../pages/Booking';
 import Login from '../pages/auth/Login'
 import Register from '../pages/auth/Register'
-import { DefaultLayout } from '../components/Layout';
+import { DefaultLayout } from '../layouts';
+import config from '../config';
+import Destination from '../pages/Destination';
 
 interface IRoute {
     path : string;
@@ -13,12 +15,12 @@ interface IRoute {
 }
 
 const publicRoutes : IRoute[]  = [
-    { path: '/', component: Home, layout: DefaultLayout },
-    { path: '/accommodation', component: Accommodation, layout: DefaultLayout },
-    { path: '/accommodation/booking', component: Booking, layout: DefaultLayout },
-    { path: '/', component: Home, layout: DefaultLayout },
-    { path: '/login', component: Login },
-    { path: '/register', component: Register },
+    { path: config.routes.home, component: Home, layout: DefaultLayout },
+    { path: config.routes.accommodation, component: Accommodation, layout: DefaultLayout },
+    { path: config.routes.booking, component: Booking, layout: DefaultLayout },
+    { path: config.routes.destination, component: Destination, layout: DefaultLayout },
+    { path: config.routes.login, component: Login },
+    { path: config.routes.register, component: Register },
 ]
 
 const privateRoutes : IRoute[] = []

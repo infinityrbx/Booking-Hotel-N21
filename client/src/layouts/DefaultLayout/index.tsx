@@ -1,5 +1,9 @@
+import classNames from "classnames/bind";
 import { ReactNode } from "react";
-import Header from "./Header";
+import Header from "../components/Header";
+import styles from './DefaultLayout.module.sass'
+
+const cx = classNames.bind(styles)
 
 type Props = {
     children : ReactNode;
@@ -7,9 +11,9 @@ type Props = {
 
 function DefaultLayout({ children } : Props) {
     return ( 
-        <div>
+        <div className={cx('wrapper')}>
             <Header />
-            <div className="container">
+            <div className={cx('container')}>
                 {children}
             </div>
         </div>

@@ -1,0 +1,43 @@
+.wrapper
+    position: relative
+    width: 100%
+    
+.inner
+    position: relative
+    overflow: hidden
+    height: 200px
+    display: flex
+    align-items: center
+    border-radius: 30px
+    backdrop-filter: blur(10px)
+
+    &::after
+        content: ""
+        height: 200px
+        width: 100%
+        position: absolute
+        top: 0
+        background-color: rgba(3, 3, 3, 0.1)
+        backdrop-filter: blur(5px)
+
+    .background
+        width: 100%
+
+.heading
+    position: absolute
+    top: 10%      
+    left: 5%  
+    color: #fff
+    
+.form
+    width: 90%
+    background: rgb(251 253 253 / 80%)
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px
+    border-radius: 20px
+    padding: 20px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: absolute
+    bottom: 10%
+    left: 5%
