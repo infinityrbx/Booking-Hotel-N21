@@ -19,7 +19,7 @@ app.use("/api/hotel", hotelRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/room", roomRoutes);
 //MONGOOSE
-const PORT = process.env.PORT || 6005;
+const PORT = process.env.PORT || 8080;
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
