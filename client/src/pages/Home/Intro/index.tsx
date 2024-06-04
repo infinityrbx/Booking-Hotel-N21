@@ -20,13 +20,13 @@ function Intro() {
                     </div>
                 </div>
                 <div className={cx('intro-image')}>
-                    <img className={cx('layer')} src="./src/assets/layer.png" alt="layer" />
+                    <img className={cx('layer')} src="./assets/layer.png" alt="layer" />
                     <div className={cx('image-left')}>
-                        <ImageBox radius square url="./src/assets/image2.jpg" />
-                        <ImageBox radius square url="./src/assets/image3.jpg" />
+                        <ImageBox radius square url="./assets/image2.jpg" />
+                        <ImageBox radius square url="./assets/image3.jpg" />
                     </div>
                     <div className={cx('image-right')}>
-                        <ImageBox radius rectangle url="./src/assets/image1.jpg" />
+                        <ImageBox radius rectangle url="./assets/image1.jpg" />
                     </div>
                 </div>
             </section>

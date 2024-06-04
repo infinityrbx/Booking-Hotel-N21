@@ -1,11 +1,11 @@
 .wrapper
     position: relative
     width: 100%
-    
+
 .inner
     position: relative
     overflow: hidden
-    height: 200px
+    height: 190px
     display: flex
     align-items: center
     border-radius: 30px
@@ -13,7 +13,7 @@
 
     &::after
         content: ""
-        height: 200px
+        height: 190px
         width: 100%
         position: absolute
         top: 0
@@ -25,10 +25,10 @@
 
 .heading
     position: absolute
-    top: 10%      
-    left: 5%  
+    top: 10%
+    left: 5%
     color: #fff
-    
+
 .form
     width: 90%
     background: rgb(251 253 253 / 80%)
@@ -41,3 +41,53 @@
     position: absolute
     bottom: 10%
     left: 5%
+
+.date-picker, .guests
+    font-size: 14px
+    position: relative
+    cursor: pointer
+
+.date-wrapper, .guests-options
+    position: absolute
+    background: #fff
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px
+    border-radius: 5px
+    overflow: hidden
+    z-index: 1000
+
+.guests-options
+    width: 200px
+
+    .optionItem
+        font-size: 14px
+        display: flex
+        justify-content: space-between
+        padding: 10px
+
+        .optionCounter
+            display: flex
+            gap: 5px
+
+            .optionCounterButton
+                width: 20px
+                cursor: pointer
+
+            .optionCounterNumber
+                width: 20px
+                display: flex
+                justify-content: center
+
+.submit-btn
+    width: 50px
+    height: 50px
+    border: none
+    border-radius: 50%
+    background: var(--secondary-color)
+    color: #fff
+    cursor: pointer
+
+    &:hover
+        background-color: darken(#5D50C6, 10%)
+
+    &:active
+        background-color: darken(#5D50C6, 20%)

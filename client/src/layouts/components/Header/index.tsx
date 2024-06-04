@@ -47,7 +47,7 @@ function Header() {
                                     </div>
                                 )}
                             >
-                                <img className={cx('avatar')} src="./src/assets/avatar.png" alt="avatar" />
+                                <img className={cx('avatar')} src="./assets/avatar.png" alt="avatar" />
                             </Tippy>
                         </>
                     ) : (

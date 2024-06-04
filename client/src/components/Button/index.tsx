@@ -10,13 +10,14 @@ type ButtonProps = {
     lefticon? : ReactNode
     to? : string
     primary? : string
+    primaryv2? : string
     secondary? : string
     disabled? : string
     onClick? : () => void
 }
 
 
-function Button({ primary, secondary, disabled,lefticon, children, to, onClick} : ButtonProps) {
+function Button({ primary, primaryv2, secondary, disabled,lefticon, children, to, onClick} : ButtonProps) {
 
     const props = {primary, secondary, to, onClick}
     
@@ -24,6 +25,7 @@ function Button({ primary, secondary, disabled,lefticon, children, to, onClick} 
     
     const classes = cx('button', {
         primary: primary,
+        primaryv2: primaryv2,
         secondary: secondary,
         disabled: disabled
     })
