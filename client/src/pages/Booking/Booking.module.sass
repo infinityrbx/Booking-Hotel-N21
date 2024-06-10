@@ -1,0 +1,167 @@
+.wrapper
+    width: 100%
+    display: flex
+    flex-direction: column
+    gap: 40px
+
+.content
+    position: relative
+    width: 100%
+
+.background
+    position: relative
+    overflow: hidden
+    height: 190px
+    display: flex
+    align-items: center
+    border-radius: 30px
+    backdrop-filter: blur(10px)
+
+    &::after
+        content: ""
+        height: 190px
+        width: 100%
+        position: absolute
+        top: 0
+        background-color: rgba(3, 3, 3, 0.1)
+        backdrop-filter: blur(5px)
+
+    img
+        width: 100%
+
+.inner
+    position: absolute
+    top: 0
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    padding: 50px
+    color: #fff
+
+.info
+    width: 100%
+    display: flex
+    flex-direction: column
+    gap: 10px
+    flex: 1
+
+.info-item
+    display: flex
+    align-items: center
+    gap: 10px
+
+.category
+    background: #ECF8FF
+    color: #4438AB  
+    font-weight: 600
+    padding: 5px 20px
+    border-radius: 20px
+    
+.action
+    width: 30%
+    display: flex
+    flex-direction: column
+    gap: 10px
+    align-items: flex-end
+
+.photo-section
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 20px
+
+.photo-wrapper
+    width: 100%
+    padding: 0 50px
+
+    .swiper-item
+        height: 200px
+        border-radius: 20px
+        overflow: hidden
+
+        img
+            height: 100%
+            width: 100%
+
+.room-section
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 20px
+    background: rgb(255, 87, 34, 5% )
+    padding: 20px 50px
+    border-radius: 20px
+
+    .section-header
+        display: flex
+        flex-direction: column
+        align-items: center
+
+    .room-types
+        width: 100%
+        display: flex
+        flex-direction: column
+        gap: 20px
+
+        .content
+            display: flex
+            flex-direction: column
+            gap: 10px
+            // background: #333
+            padding: 20px 30px 20px 40px
+            border-radius: 20px
+            box-shadow: rgba(3, 18, 26, 0.2) 0px 1px 2px 0px
+            background: #fff
+            position: relative
+            overflow: hidden
+
+            &::after
+                content: ''
+                width: 650px
+                height: 600px
+                background: #FF5722
+                border-radius: 20px
+                top: 0
+                position: absolute
+                transform: rotate(45deg)
+                opacity: 80%
+                z-index: 0
+            .room-info
+                display: flex
+                align-items: center
+                gap: 30px
+                position: relative
+                z-index: 1
+
+.room-list 
+    width: 300px
+    display: flex
+    flex-direction: column
+    gap: 30px
+    // background: #333
+
+    .check-room
+        display: flex
+        flex-wrap: wrap
+
+        .room-item
+            display: flex
+            flex-direction: column
+            align-items: center
+            width: 50px
+            height: 50px
+
+    .price
+        display: flex
+        flex-direction: column
+        align-items: center
+
+.book-btn
+    width: 100%
+    display: flex
+    justify-content: space-around
+
+

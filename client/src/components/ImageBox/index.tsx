@@ -7,17 +7,19 @@ type Props = {
     radius? : boolean
     rounded? : boolean
     square? : boolean
+    smallSquare? : boolean
     rectangle? : boolean
     url : string
 }
 
-function ImageBox({ radius, rounded, square, rectangle, url } : Props) {
+function ImageBox({ radius, rounded, square, smallSquare, rectangle, url } : Props) {
 
     const classes = cx( 'wrapper',
         {
             'radius' : radius,
             'rounded' : rounded,
             'square' : square,
+            'small-square' : smallSquare,
             'rectangle' : rectangle
         }
     )
