@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Accommodation.module.sass';
 import SearchForm from './SearchForm';
-import HotelCard from './HotelCard';
+import HotelCard from '../../components/HotelCard';
 
 const cx = classNames.bind(styles);
 
