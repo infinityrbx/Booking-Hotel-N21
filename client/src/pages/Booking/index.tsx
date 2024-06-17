@@ -10,9 +10,10 @@ import { faCompass, faStar } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../components/Button';
 import RoomType from './RoomType';
 import useFetch from '../../hooks/useFetch';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { SearchContext } from '../../context/SearchContext';
+import { AuthContext } from '../../context/AuthContext';
 
 const cx = classNames.bind(styles);
 
@@ -56,11 +57,13 @@ function Booking() {
         return diffDays;
     }
 
-    let days = 0;
+    let days = 1;
 
     if (dates.length > 0 && dates[0].endDate && dates[0].startDate) {
         days = dayDifference(dates[0].endDate, dates[0].startDate);
     }
+
+
 
     return (
         <div className={cx('wrapper')}>
@@ -129,10 +132,8 @@ function Booking() {
                                     </h3>
                                 </div>
                                 <div className={cx('room-types')}>
-                                    <RoomType />
-                                    <div className={cx('book-btn')}>
-                                        <Button primaryv2="true">Book now</Button>
-                                    </div>
+                                    <RoomType placeId={data._id} rooms={options.room ?? 0} />
+                                    
                                 </div>
                             </div>
                         </>
