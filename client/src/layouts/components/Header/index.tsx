@@ -8,29 +8,41 @@ import { Wrapper as PopperWrapper } from '../../../components/Popper';
 import PopperItem from '../../../components/PopperItem';
 import config from '../../../config';
 import Menu, { MenuItem } from '../Menu';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../../context/AuthContext';
 
 const cx = classNames.bind(styles);
 
 function Header() {
-    const currentUser = false;
+    const { user, dispatch } = useContext(AuthContext);
+    console.log(user);
+
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        dispatch({ type: 'LOGIN_SUCCESS'});
+        navigate('/login');
+    }
 
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={config.routes.home}><div className={cx('logo')}>VacationHomes</div></Link>
+                <Link to={config.routes.home}>
+                    <div className={cx('logo')}>VacationHomes</div>
+                </Link>
                 <div className={cx('menu')}>
                     <Menu>
-                        <MenuItem title='Home' url={config.routes.home} />
-                        <MenuItem title='Accommodation' url={config.routes.accommodation} />
-                        <MenuItem title='Destination' url={config.routes.destination} />
+                        <MenuItem title="Home" url={config.routes.home} />
+                        <MenuItem title="Accommodation" url={config.routes.accommodation} />
+                        <MenuItem title="Destination" url={config.routes.destination} />
                     </Menu>
                 </div>
 
                 <div className={cx('action')}>
-                    {currentUser ? (
+                    {user ? (
                         <>
-                            <p className={cx('username')}>Mark Smith</p>
+                            <p className={cx('username')}>{user.firstName + ' ' + user.lastName}</p>
                             <Tippy
                                 placement="bottom-end"
                                 interactive
@@ -38,8 +50,8 @@ function Header() {
                                     <div className={cx('user-menu')} tabIndex={-1} {...attrs}>
                                         <PopperWrapper>
                                             <PopperItem icon={<FontAwesomeIcon icon={faUser} />}>Profile</PopperItem>
-                                            <PopperItem 
-                                                to={config.routes.login}
+                                            <PopperItem
+                                                onClick={handleLogout}
                                                 icon={<FontAwesomeIcon icon={faRightFromBracket} />}
                                             >
                                                 Log out
@@ -54,8 +66,8 @@ function Header() {
                     ) : (
                         <>
                             {/* <FontAwesomeIcon icon={faPlus} /> */}
-                            <Button to={config.routes.login} >Login</Button>
-                            <Button to={config.routes.register} secondary="true" >
+                            <Button to={config.routes.login}>Login</Button>
+                            <Button to={config.routes.register} secondary="true">
                                 Sign up
                             </Button>
                         </>

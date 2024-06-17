@@ -9,7 +9,7 @@ type Props = {
     icon? : ReactNode
     children : ReactNode
     to? : string
-    onClick? : () => {}
+    onClick? : () => void
 
 }
 
