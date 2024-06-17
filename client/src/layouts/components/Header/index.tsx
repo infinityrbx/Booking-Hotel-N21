@@ -8,6 +8,7 @@ import { Wrapper as PopperWrapper } from '../../../components/Popper';
 import PopperItem from '../../../components/PopperItem';
 import config from '../../../config';
 import Menu, { MenuItem } from '../Menu';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -17,7 +18,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>VacationHomes</div>
+                <Link to={config.routes.home}><div className={cx('logo')}>VacationHomes</div></Link>
                 <div className={cx('menu')}>
                     <Menu>
                         <MenuItem title='Home' url={config.routes.home} />

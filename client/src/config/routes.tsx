@@ -1,7 +1,7 @@
 const routes = {
     home : '/',
     accommodation : '/accommodation',
-    booking : '/accommodation/booking',
+    booking : '/hotel/find/:id',
     destination : '/destination',
     login : '/login',
     register : '/register'

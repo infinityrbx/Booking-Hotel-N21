@@ -46,7 +46,7 @@ function Featured() {
                                     <div className={cx('info')}>
                                         <div className={cx('info-content')}>
                                             <h3>{cityNames[index]}</h3>
-                                            <p>1 places</p>
+                                            <p>{data[index]} places</p>
                                         </div>
                                     </div>
                                 </div>

@@ -1,0 +1,83 @@
+.wrapper
+    position: relative
+    overflow: hidden
+    width: 100%
+    border-radius: 30px
+
+.slide
+    display: flex
+    justify-content: space-around
+    transition: transform
+    transition-timing-function: ease-out
+    transition-duration: 500ms
+    position: relative
+    z-index: 2
+
+    .slide-item
+        display: flex
+        align-items: center
+        justify-content: space-around
+        overflow: hidden
+
+.swiper
+
+    .slide-item
+        border-radius: 20px
+        width: 300px
+        height: 200px
+
+        img
+            height: 100%
+            width: 100%
+
+.slider
+
+    .slide-item
+        width: 100%
+        flex-shrink: 0
+
+        img
+            height: 100%
+
+.slide-action
+    position: absolute
+    z-index: 2
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.chevron-btn
+    padding: 4px
+    background: transparent
+    border: none
+    color: #333
+    font-size: 32px
+    opacity: 30%
+    cursor: pointer
+
+    &:hover
+        opacity: 80%
+
+.pagination-wrapper
+    position: absolute
+    z-index: 3
+    bottom: 1rem
+    right: 0
+    left: 0
+
+    .pagination
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 0.5rem
+
+        .pagination-item
+            transition: all
+            width: 0.75rem
+            height: 0.75rem
+            background-color: white
+            border-radius: 9999px

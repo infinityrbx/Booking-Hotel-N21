@@ -7,12 +7,29 @@ import Button from '../../../components/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import TextField from '../../../components/TextField';
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { format } from 'date-fns';
+import { SearchContext } from '../../../context/SearchContext';
 
 const cx = classNames.bind(styles);
 
-function SearchForm() {
+type Options = {
+    adult: number;
+    children: number;
+    room: number;
+};
+
+export interface SearchFormData {
+    destination: string;
+    dates: Range[];
+    options: Options;
+}
+
+interface SearchFormProps {
+    onSubmit: (data: SearchFormData) => void;
+}
+
+function SearchForm({ onSubmit }: SearchFormProps) {
     const [destination, setDestination] = useState('');
     const [dates, setDates] = useState<Range[]>([
         {
@@ -23,11 +40,7 @@ function SearchForm() {
     ]);
     const [openDate, setOpenDate] = useState(false);
 
-    type Options = {
-        adult: number;
-        children: number;
-        room: number;
-    };
+    
     const [openOptions, setOpenOptions] = useState(false);
     const [options, setOptions] = useState<Options>({
         adult: 1,
@@ -57,7 +70,7 @@ function SearchForm() {
         };
     }, []);
 
-    const handleChange = () => {};
+    const {dispatch} = useContext(SearchContext)
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -66,7 +79,9 @@ function SearchForm() {
             dates,
             options,
         };
-        console.log('Form Data:', formData);
+        // console.log('Form Data:', formData);
+        onSubmit(formData); 
+        dispatch({ type: "NEW_SEARCH", payload: formData });
     };
 
     return (

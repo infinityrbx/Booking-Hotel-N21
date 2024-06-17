@@ -6,6 +6,7 @@ import useFetch from '../../../hooks/useFetch';
 const cx = classNames.bind(styles);
 
 interface Place {
+    _id: string;
     name: string;
     city: string;
     photos: string;
@@ -29,11 +30,7 @@ function PopularPlaces() {
                         data.map((place, index) => (
                             <HotelCard
                                 key={index}
-                                photos={place.photos}
-                                name={place.name}
-                                city={place.city}
-                                price={place.cheapestPrice}
-                                rating={place.rating}
+                                item={place}
                             />
                         ))}
                 </div>

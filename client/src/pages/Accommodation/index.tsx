@@ -1,26 +1,51 @@
 import classNames from 'classnames/bind';
 import styles from './Accommodation.module.sass';
-import SearchForm from './SearchForm';
+import SearchForm, { SearchFormData } from './SearchForm';
 import HotelCard from '../../components/HotelCard';
+import useFetch from '../../hooks/useFetch';
+import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles);
 
+interface Place {
+    _id: string;
+    name: string;
+    city: string;
+    photos: string;
+    cheapestPrice: number;
+    rating: number;
+}
+
 function Accommodation() {
+    const [formData, setFormData] = useState<SearchFormData | null>(null);
+
+    const handleFormData = (data: SearchFormData) => {
+        setFormData(data);
+        
+    };
+
+    const { data, loading, error, reFetch } = useFetch<Place[]>(
+        `https://booking-hotel-n21.onrender.com/api/hotel?city=${formData?.destination}`,
+    );
+
+    useEffect(() => {
+        reFetch();
+    }, [formData]);
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('search-form')}>
-                <SearchForm />
+                <SearchForm onSubmit={handleFormData} />
             </div>
             <div className={cx('search-result')}>
                 <h2>Popular Hotels</h2>
-                <div className={cx('hotel-list')}>
-                    <HotelCard imgUrl='./assets/image4.jpg'/>
-                    <HotelCard imgUrl='./assets/image2.jpg'/>
-                    <HotelCard imgUrl='./assets/image7.jpg'/>
-                    <HotelCard imgUrl='./assets/image8.jpg'/>
-                    <HotelCard imgUrl='./assets/image5.jpg'/>
-                    <HotelCard imgUrl='./assets/image1.jpg'/>
-                </div>
+                {loading ? (
+                    'Loading please wait'
+                ) : (
+                    <div className={cx('hotel-list')}>
+                        {data && data.map((place, index) => <HotelCard key={index} item={place} />)}
+                    </div>
+                )}
             </div>
         </div>
     );
