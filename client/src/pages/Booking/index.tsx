@@ -10,10 +10,9 @@ import { faCompass, faStar } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../components/Button';
 import RoomType from './RoomType';
 import useFetch from '../../hooks/useFetch';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useContext } from 'react';
 import { SearchContext } from '../../context/SearchContext';
-import { AuthContext } from '../../context/AuthContext';
 
 const cx = classNames.bind(styles);
 
@@ -44,7 +43,7 @@ function Booking() {
     const location = useLocation();
     const id = location.pathname.split('/')[3];
 
-    const { data, loading, error } = useFetch<Place>(`https://booking-hotel-n21.onrender.com/api/hotel/find/${id}`);
+    const { data, loading } = useFetch<Place>(`https://booking-hotel-n21.onrender.com/api/hotel/find/${id}`);
 
     const { dates, options } = useContext(SearchContext);
 

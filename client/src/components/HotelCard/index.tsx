@@ -3,7 +3,6 @@ import styles from './HotelCard.module.sass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCompass, faStar } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import config from '../../config';
 
 const cx = classNames.bind(styles);
 

@@ -2,8 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './SearchForm.module.sass';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
-import { DateRange, Range, RangeKeyDict } from 'react-date-range';
-import Button from '../../../components/Button';
+import { DateRange, Range } from 'react-date-range';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import TextField from '../../../components/TextField';
@@ -87,7 +86,7 @@ function SearchForm({ onSubmit }: SearchFormProps) {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img className={cx('background')} src="./assets/image7.jpg" alt="background" />
+                <img className={cx('background')} src={import.meta.env.BASE_URL + 'assets/image7.jpg'} alt="background" />
             </div>
             <h1 className={cx('heading')}>Enjoy your Vacation</h1>
             <form className={cx('form')} onSubmit={handleSubmit}>

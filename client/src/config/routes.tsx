@@ -4,7 +4,11 @@ const routes = {
     booking : '/hotel/find/:id',
     destination : '/destination',
     login : '/login',
-    register : '/register'
+    register : '/register',
+    admin : '/admin',
+    users : '/users',
+    hotels : '/hotels',
+    rooms : '/rooms'
 }
 
 export default routes

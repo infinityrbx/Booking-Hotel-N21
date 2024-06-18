@@ -33,13 +33,13 @@ interface RoomTypeProps {
     rooms: number;
 }
 
-function RoomType({ placeId, rooms }: RoomTypeProps) {
+function RoomType({ placeId }: RoomTypeProps) {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     const [selectedRooms, setSelectedRooms] = useState<string[]>([]);
     const { dates } = useContext(SearchContext);
 
-    const { data, loading, error } = useFetch<Room[]>(
+    const { data, loading } = useFetch<Room[]>(
         `https://booking-hotel-n21.onrender.com/api/hotel/room/${placeId}`,
     );
 

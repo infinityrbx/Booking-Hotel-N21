@@ -10,7 +10,7 @@ interface Category {
 }
 
 function Categories() {
-    const { data, loading, error } = useFetch<Category[]>('https://booking-hotel-n21.onrender.com/api/hotel/countByType');
+    const { data, loading } = useFetch<Category[]>('https://booking-hotel-n21.onrender.com/api/hotel/countByType');
 
     console.log(data)
 

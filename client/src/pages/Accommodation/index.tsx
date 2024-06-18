@@ -24,7 +24,7 @@ function Accommodation() {
         
     };
 
-    const { data, loading, error, reFetch } = useFetch<Place[]>(
+    const { data, loading, reFetch } = useFetch<Place[]>(
         `https://booking-hotel-n21.onrender.com/api/hotel?city=${formData?.destination}`,
     );
 

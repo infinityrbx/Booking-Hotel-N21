@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 const cityNames = ['Luangprabang', 'Vientiane', 'HaNoi', 'DaNang'];
 
 function Featured() {
-    const { data, loading, error } = useFetch<number[]>(
+    const { data, loading } = useFetch<number[]>(
         'https://booking-hotel-n21.onrender.com/api/hotel/countByCity?cities=Luangprabang,Vientiane,Hanoi,DaNang',
     );
 

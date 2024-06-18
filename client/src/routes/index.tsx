@@ -4,9 +4,13 @@ import Accommodation from '../pages/Accommodation';
 import Booking from '../pages/Booking';
 import Login from '../pages/auth/Login'
 import Register from '../pages/auth/Register'
-import { DefaultLayout } from '../layouts';
+import { AdminLayout, DefaultLayout } from '../layouts';
 import config from '../config';
 import Destination from '../pages/Destination';
+import Users from '../admin/pages/Users';
+import Hotels from '../admin/pages/Hotels';
+import Rooms from '../admin/pages/Rooms';
+import Dashboard from '../admin/pages/Dashboard';
 
 interface IRoute {
     path : string;
@@ -21,6 +25,10 @@ const publicRoutes : IRoute[]  = [
     { path: config.routes.destination, component: Destination, layout: DefaultLayout },
     { path: config.routes.login, component: Login },
     { path: config.routes.register, component: Register },
+    { path: config.routes.admin, component: Dashboard, layout: AdminLayout },
+    { path: config.routes.users, component: Users, layout: AdminLayout },
+    { path: config.routes.hotels, component: Hotels, layout: AdminLayout },
+    { path: config.routes.rooms, component: Rooms, layout: AdminLayout },
 ]
 
 const privateRoutes : IRoute[] = []

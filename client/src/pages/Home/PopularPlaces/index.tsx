@@ -15,7 +15,7 @@ interface Place {
 }
 
 function PopularPlaces() {
-    const { data, loading, error } = useFetch<Place[]>(
+    const { data, loading } = useFetch<Place[]>(
         'https://booking-hotel-n21.onrender.com/api/hotel?featured=true',
     );
 

@@ -20,13 +20,13 @@ function Intro() {
                     </div>
                 </div>
                 <div className={cx('intro-image')}>
-                    <img className={cx('layer')} src="./assets/layer.png" alt="layer" />
+                    <img className={cx('layer')} src={import.meta.env.BASE_URL + 'assets/layer.png'} alt="layer" />
                     <div className={cx('image-left')}>
-                        <ImageBox radius square url="./assets/image2.jpg" />
-                        <ImageBox radius square url="./assets/image3.jpg" />
+                        <ImageBox radius square url={import.meta.env.BASE_URL + 'assets/image2.jpg'} />
+                        <ImageBox radius square url={import.meta.env.BASE_URL + 'assets/image3.jpg'} />
                     </div>
                     <div className={cx('image-right')}>
-                        <ImageBox radius rectangle url="./assets/image1.jpg" />
+                        <ImageBox radius rectangle url={import.meta.env.BASE_URL + 'assets/image1.jpg'} />
                     </div>
                 </div>
             </section>
